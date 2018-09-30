@@ -11,5 +11,14 @@ namespace OpenMooc;
 
 class Service
 {
+ private $errors;//array of errors
 
+    public function setErrors($error){
+        if(is_array($error))
+            $this->errors=$error;
+        $this->errors[]=$error;
+    }
+    public  function errors(){
+        return $this->errors;
+    }
 }
